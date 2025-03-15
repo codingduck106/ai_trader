@@ -63,9 +63,13 @@ def backtest_strategy(csv_file):
     cerebro.plot()
 
 if __name__ == "__main__":
+    out = open('output.txt', 'w')
+    out.write('')
+    out.close()
     out = open('output.txt', 'a')
     decisions = []
     for stock in open('input.txt', 'r').readlines():
+        stock = stock.strip()
         stock_csv = get_stock_data(stock)  # Example: Apple stock
         stock_csv = open(f'./csv_files/{stock}.csv', 'r')
         lines = stock_csv.readlines()
