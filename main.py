@@ -14,8 +14,8 @@ class MomentumStrategy(bt.Strategy):
         if not self.position:
             if self.rsi < 30 and self.macd.macd > self.macd.signal:
                 self.buy()
-        elif self.rsi > 70 and self.macd.macd < self.macd.signal:
-            self.sell()
+            elif self.rsi > 70 and self.macd.macd < self.macd.signal:
+                self.sell()
 
 # Fetch stock data
 def get_stock_data(symbol, start='2025-01-01', end=None):
